@@ -209,12 +209,17 @@
     <Compile Include="Migrations\201904020611598_CreatePaymentModeTable.Designer.cs">
       <DependentUpon>201904020611598_CreatePaymentModeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904020628485_CreateTransactionTable.cs" />
+    <Compile Include="Migrations\201904020628485_CreateTransactionTable.Designer.cs">
+      <DependentUpon>201904020628485_CreateTransactionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PaymentMode.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -300,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904020611598_CreatePaymentModeTable.resx">
       <DependentUpon>201904020611598_CreatePaymentModeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904020628485_CreateTransactionTable.resx">
+      <DependentUpon>201904020628485_CreateTransactionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

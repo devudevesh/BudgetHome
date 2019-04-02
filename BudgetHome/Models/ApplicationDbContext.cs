@@ -11,6 +11,7 @@ namespace BudgetHome.Models
         }
 
         public DbSet<PaymentMode> PaymentModes { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         public static ApplicationDbContext Create()
         {

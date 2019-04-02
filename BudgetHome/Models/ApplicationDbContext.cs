@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace BudgetHome.Models
 {
@@ -8,6 +9,8 @@ namespace BudgetHome.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<PaymentMode> PaymentModes { get; set; }
 
         public static ApplicationDbContext Create()
         {

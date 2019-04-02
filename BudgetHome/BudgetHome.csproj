@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201904020628485_CreateTransactionTable.Designer.cs">
       <DependentUpon>201904020628485_CreateTransactionTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904020644401_OverridesConvensionForTransaction.cs" />
+    <Compile Include="Migrations\201904020644401_OverridesConvensionForTransaction.Designer.cs">
+      <DependentUpon>201904020644401_OverridesConvensionForTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -308,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904020628485_CreateTransactionTable.resx">
       <DependentUpon>201904020628485_CreateTransactionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904020644401_OverridesConvensionForTransaction.resx">
+      <DependentUpon>201904020644401_OverridesConvensionForTransaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

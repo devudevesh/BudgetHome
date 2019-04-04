@@ -1,0 +1,49 @@
+﻿@model BudgetHome.ViewModels.ExpenseViewModel
+@{
+    ViewBag.Title = "Add Expense";
+}
+
+<h2>Add Expense</h2>
+
+@using (Html.BeginForm("Add", "Expense"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product)
+        @Html.TextBoxFor(m => m.Product, new { @class = "form-control", autofocus = "autofocus" })
+        @Html.ValidationMessageFor(m => m.Product)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PaidAmount)
+        @Html.TextBoxFor(m => m.PaidAmount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PaidAmount)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PaymentModeId)
+        @Html.DropDownListFor(m => m.PaymentModeId, new SelectList(Model.PaymentModes, "Id", "ModeName"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PaymentModeId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankName)
+        @Html.TextBoxFor(m => m.BankName, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" value="Add Expense" class="btn btn-primary">Add Expense</button>
+
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            debugger;
+            var Res = "@ViewData["ResponseMessage"]";
+            if (Res == "Success")
+                swal("Success!", "We have recorded your expense.", "success");
+        });
+    </script>
+}

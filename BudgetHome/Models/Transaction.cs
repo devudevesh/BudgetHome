@@ -32,7 +32,7 @@ namespace BudgetHome.Models
         [StringLength(6)]
         public string TransactionType { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime TransactionDate { get; private set; }
+        [Required]
+        public DateTime TransactionDate { get; set; }
     }
 }

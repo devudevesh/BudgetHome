@@ -64,5 +64,23 @@ namespace BudgetHome.Controllers
 
             return RedirectToAction("Add");
         }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult Show()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult GetData()
+        {
+            var UserId = User.Identity.GetUserId();
+            var TransData = (from s in dbContext.Transactions
+                            where s.UserId == UserId
+                            orderby s.Id descending
+                            select new  { Description = s.Product, PaidAmount = s.PaidAmount, ModeOfPayment = s.PaymentMode.ModeName, BankName = s.BankName, TransactionDate = s.TransactionDate.ToString() }).ToList();
+            return Json(new { data = TransData }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
